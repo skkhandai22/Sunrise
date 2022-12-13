@@ -267,9 +267,9 @@ def main():
             col1, col2, col3,col4,col5,col6,col7,col8,col9 = st.columns(9)
             if col5.button('Check'):
                 result=rf_predict(age,type_injury,location,reason,bool_fall_risk,severity,gender)
-                if result=='High':
+                if result=='High Risk':
                     st.error(result)
-                elif result=='Low':
+                elif result=='Low Risk':
                     st.success(result)
                 else:
                     st.warning(result)
