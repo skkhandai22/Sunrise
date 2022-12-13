@@ -6,7 +6,7 @@ from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
 
 st.set_page_config(
-    page_title="Senior Livings",
+    page_title="Sunrise Senior Livings",
     page_icon="senior-living-home.png",
     layout="wide",
     initial_sidebar_state="expanded"
