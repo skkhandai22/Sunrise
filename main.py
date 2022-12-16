@@ -38,7 +38,7 @@ def svm_predict(dist,pressure,hrv,sugar_level,spo2,acc):
     elif prediction ==1:
         pred = "may slip/trip/fumble"
     else:
-        pred = "definately fall"
+        pred = "definitely fall"
 
     return pred
 
@@ -188,6 +188,9 @@ def rf_predict(age,type_injury,location,reason,bool_fall_risk,severity,gender):
 
 def display_file(path):
     df= pd.read_csv(path)
+    df['Pressure'] = df['Pressure'].replace([0,1,2], ['Low Pressure', 'Moderate Pressure','High Pressure'])
+    df['Accelerometer'] = df['Accelerometer'].replace([0,1], ['Less Than +-3g', 'Greater than +-3g'])
+    df['Decision '] = df['Decision '].replace([0,1,2], ['No Fall', 'Chances of Slip/Fumble','Definate Fall'])
     st.info("Dataset")
     AgGrid(df.head())
         
