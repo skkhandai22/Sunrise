@@ -4,8 +4,12 @@ import pickle
 from streamlit_option_menu import option_menu
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
-st.session_state['answer'] = ''!
-st.write(st.session_state)
+ st.session_state['answer'] = ''
+
+ if  st.session_state['answer'] in realans:
+        answerStat = "correct"
+    elif st.session_state['answer'] not in realans:
+        answerStat = "incorrect"
 
 st.set_page_config(
     page_title="Sunrise Senior Livings",
