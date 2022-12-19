@@ -4,12 +4,6 @@ import pickle
 from streamlit_option_menu import option_menu
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
-st.session_state['answer'] = ''
-
-if  st.session_state['answer'] in realans:
- answerStat = "correct"
-elif st.session_state['answer'] not in realans:
- answerStat = "incorrect"
 
 st.set_page_config(
     page_title="Sunrise Senior Livings",
@@ -199,6 +193,11 @@ def display_file(path):
     df['Decision '] = df['Decision '].replace([0,1,2], ['No Fall', 'Chances of Slip/Fumble','Definate Fall'])
     st.info("Dataset")
     AgGrid(df.head())
+
+def display_file_2(path):
+    df=pd.read_csv(path)
+    st.info("Dataset")
+    AgGrid(df.head())
         
 
 def main():
@@ -260,10 +259,11 @@ def main():
             st.info('PowerBI Dashboard')
             st.markdown('<iframe title="Senior Livings Analytics - Page 1" width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiN2E3MjExMTUtZWQ2ZS00OWU3LWI3OWEtODU5NTViOWI1MmU5IiwidCI6ImE2MTdlYzYwLTBhYjMtNDBiZS05MjhmLWJmMzY1MzA4NDkxYSIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>',unsafe_allow_html=True)
             # Dashboard= IFrame(src="https://app.powerbi.com/view?r=eyJrIjoiN2E3MjExMTUtZWQ2ZS00OWU3LWI3OWEtODU5NTViOWI1MmU5IiwidCI6ImE2MTdlYzYwLTBhYjMtNDBiZS05MjhmLWJmMzY1MzA4NDkxYSIsImMiOjF9&pageName=ReportSection",width=1000,height=600)
-
+    
     if file_option=="data.csv":
+
         if selection=="Home":
-            display_file("data.csv")
+            display_file_2("data.csv")
         if selection=="Prediction":
             gender=st.radio('Select Gender',('Male','Female'))
             age=st.selectbox("Select Age Range",('Less than 1year','1yr-13yr','14yr-20yr','21yr-30yr','31yr-40yr','41yr-50yr','51yr - 60yr','61yr - 70yr','71yr - 80yr','81yr - 90yr','90yr above'))
