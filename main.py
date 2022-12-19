@@ -4,6 +4,7 @@ import pickle
 from streamlit_option_menu import option_menu
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
+st.session_state['answer'] = ''!
 
 st.set_page_config(
     page_title="Sunrise Senior Livings",
