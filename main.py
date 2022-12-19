@@ -21,7 +21,7 @@ rf_classifier=pickle.load(pickle_in)
 def svm_predict(dist,pressure,hrv,sugar_level,spo2,acc):
     if pressure=='Low Pressure':
         pressure=0
-    elif pressure =='Medium Level Pressure':
+    elif pressure =='Moderate Pressure':
         pressure=1
     else:
         pressure=2
@@ -233,7 +233,7 @@ def main():
         if selection=="Prediction":
            
             dist=st.number_input("Enter the distance")     
-            pressure=st.selectbox("Stick Pressure",('Low Pressure','Medium Level Pressure','High Pressure'))       
+            pressure=st.selectbox("Stick Pressure",('Low Pressure','Moderate Pressure','High Pressure'))       
             hrv=st.number_input("Enter Heart Rate Variability(HRV)")
             sugar_level=st.number_input("Enter Sugar Level")
             spo2=st.slider('Enter SpO2 level', 0,100,80)
