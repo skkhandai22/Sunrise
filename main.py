@@ -285,7 +285,7 @@ def main():
                       
 
         if selection=="Vizualization":
-            st.markdown('<iframe title="Senior Livings Analytics" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiN2E3MjExMTUtZWQ2ZS00OWU3LWI3OWEtODU5NTViOWI1MmU5IiwidCI6ImE2MTdlYzYwLTBhYjMtNDBiZS05MjhmLWJmMzY1MzA4NDkxYSIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>',unsafe_allow_html=True)
+            st.markdown('<iframe title="powerbi-data-report-12" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZDM1ZGFjZGQtNjZkZS00MWMxLTk4M2EtMTFiYTlkNDdjZjg2IiwidCI6ImE2MTdlYzYwLTBhYjMtNDBiZS05MjhmLWJmMzY1MzA4NDkxYSIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>',unsafe_allow_html=True)
 
 
         
